@@ -9,3 +9,10 @@ In code folder, files to reproduce AB4COGT are stored.
 CARLA_groundtruth_sync_v2.py can be used to store both LiDAR point clouds to .npy and ground-truth to .txt files in KITTI format.
 
 CARLA_groundtruth_to_ROS.py can be used to reproduce the previously stored .npy LiDAR point clouds to ROS PointCloud2 topic.
+
+## Standalone
+In standalone folder, scene 0004 used for AB4COGT paper validation is stored.
+
+Ground-truth is stored in 0004.txt using CARLA_groundtruth_sync_v2.py
+
+LiDAR point cloud can be reproduced in ROS PointCloud2 topic by executing CARLA_groundtruth_to_ROS.py
