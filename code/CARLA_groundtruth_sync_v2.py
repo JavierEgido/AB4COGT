@@ -92,7 +92,7 @@ class ros_callbacks():
 			for point in sensor_msgs.point_cloud2.read_points(pointcloud, skip_nans=True):
 				points.extend(point)
 			points = np.asarray(points).reshape([3,-1])
-			filename = "./AB4COGT/" + args.scene.zfill(4) + '/' + str(frame).zfill(6) + ".npy"
+			filename = "../standalone/" + args.scene.zfill(4) + '/' + str(frame).zfill(6) + ".npy"
 			points.tofile(filename)
 
 		self.sequence += 1
@@ -116,7 +116,7 @@ class ros_callbacks():
 		self.args = args
 		if not args.lidar: pointcloud = None
 
-		txtfile = './AB4COGT/' + args.scene.zfill(4) + '.txt'
+		txtfile = '../standalone/' + args.scene.zfill(4) + '.txt'
 		if os.path.exists(txtfile): os.remove(txtfile)
 		self.label_file = open(txtfile, "a")
 
@@ -140,7 +140,7 @@ class ros_callbacks():
 if __name__ == '__main__':
 
 	argparser = argparse.ArgumentParser(
-		description='CARLA ground-truth collector')
+		description='AB4COGT ground-truth collector')
 	argparser.add_argument(
 		'--lidar','-v', '--velodyne', '-l',
 		default=0,
